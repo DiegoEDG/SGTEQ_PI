@@ -10,7 +10,7 @@
     <link rel="icon" type="image/png" href="{{asset('images/favicon.png')}}" />
     <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
 	<script src="https://use.fontawesome.com/c42eb0bcd4.js"></script>
-    <title>Document</title>
+    <title>SGTEQ</title>
 </head>
 <body>
     <nav class="navbar">
