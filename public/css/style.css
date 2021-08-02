@@ -1,0 +1,118 @@
+.navbar{
+    background-color: #001e4f !important;
+}
+#btnnav{
+    width: 3rem !important;
+    height: 3rem !important;
+    float:right;
+}
+.imgnav{
+    width: 4rem;
+    height: 5rem;
+}
+.titulonav{
+    color: white;
+    padding-top: 1rem;
+}
+.centrarformch{
+    padding-top: 10rem;
+    padding-left: 10rem;
+    padding-bottom: 10rem;
+    padding-right: 10rem;
+}
+.centrarformgd{
+    padding-top: 3rem;
+    padding-left: 10rem;
+    padding-bottom: 3rem;
+    padding-right: 10rem;
+}
+.btn{
+    color: white !important;
+    background-color: rgb(93,102,111) !important;
+}
+.contenido{
+    text-align: center;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+}
+.imgcar{
+    width: 50rem;
+    height: 65vh;
+}
+.carrusel{
+    padding-top: 0.5rem;
+    padding-left: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-right: 0.5rem;
+}
+.btnrojo{
+    background-color: rgb(93,102,111) !important;
+    width: 100%;
+}
+.btnposicion{
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+.btndoble{
+    padding-left: 2rem;
+    padding-right: 2rem;
+    display: flex !important;
+    justify-content: space-evenly !important;
+}
+.btnmitad{
+    width: 40rem;
+}
+.imgboton{
+    height: 3rem;
+}
+.h1alinea{
+    margin-left: 2rem;
+    margin-top: 2rem;
+}
+.contenido_formatos{
+    padding-bottom: 5rem;
+}
+.h2alinea{
+    margin-left: 2rem;
+    margin-top: 1rem;
+}
+.centrarcuest{
+    padding-top: 3rem;
+    padding-left: 5rem;
+    padding-bottom: 5rem;
+    padding-right: 5rem;
+}
+.botonesradio{
+    margin-bottom: 0.5rem;
+}
+a:hover {
+    text-decoration: none;
+}
+.tarjetasprincipal{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 3rem;
+}
+.tarjetaimagen{
+    height: 20rem;
+}
+.tarjeta{
+    width: 27vw !important;
+}
+.tarjetasbtn{
+    width: 100%;
+    margin-bottom: 5vh;
+    margin-top: 4vh;
+}
+.btnpanel{
+    width: 100%;
+}
+.light{
+    font-weight: lighter;
+}
+.iconify{
+     color: white; 
+}
+footer{
+    background-color: #001e4f;
+}
