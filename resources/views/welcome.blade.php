@@ -28,7 +28,7 @@
         </div>
 
         <div class="me-4">
-            <a class="text-light text-decoration-none ms-3" href="#">
+            <a class="text-light text-decoration-none ms-3" href="{{route('login')}}">
                 Inicar sesión
             </a>
         </div>

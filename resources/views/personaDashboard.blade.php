@@ -28,27 +28,87 @@
         </div>
     </nav>
 
-    <div class="container mt-5 mb-5">
+    <div class="container mt-5 mb-3">
         <div class="jumbotron jumbotron-fluid">
             <div class="container">
-              <h1 class="display-4">Inicia sesión</h1>
-              <p class="lead">Ingresa tu correo y contraseña para inciar sesión y acceder a la plataforma</p>
+              <h1 class="display-4 text-center">Bienvenido!</h1>
+              <p class="text-center">Aquí encontrarás tu historial de trámites, así también podrás crear una cita</p>
+            </div>
+          </div>
+    </div>
+
+    <div class="container">
+        <div class="card mb-3 col-md-6" style="max-width: 1200px;">
+            <div class="row no-gutters">
+              <div class="col-md-4">
+                <a href="{{route('realizarTramites')}}">
+                    <img src="{{asset('images/tra.jpg')}}" style="max-width: 100%;">
+                </a>
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <a href="{{route('generarCita')}}">
+                      <h5 class="card-title">Realizar un trámite</h5>
+                  </a>
+                  <p class="card-text">Aquí podrás encontrar los diferentes trámnites que puedes realizar.</p>
+                </div>
+              </div>
             </div>
           </div>
 
-          <form action="{{route('authLogin')}}" method="POST">
-            @csrf
-            <div class="form-group">
-              <label for="email">Correo</label>
-              <input type="email" class="form-control" name="email" required>
-            </div>
-            <div class="form-group">
-              <label for="password">Contraseña</label>
-              <input type="password" class="form-control" name="password" required>
-            </div>
-            <button type="submit" class="btn btn-primary">Iniciar sesión</button>
-          </form>
-          <h6 class="text-center">Aún no tienes una cuenta? <a href="{{route('registrate')}}">Registrate!</a></h6>
+              <div class="card mb-3 col-md-6" style="max-width: 1200px;">
+                <div class="row no-gutters">
+                  <div class="col-md-4">
+                    <a href="{{route('generarCita')}}">
+                        <img src="{{asset('images/tar4.jpg')}}" style="max-width: 100%;">
+                    </a>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <a href="{{route('generarCita')}}">
+                          <h5 class="card-title">Agendar un cita</h5>
+                      </a>
+                      <p class="card-text">Aquí podrás agendar una cita para el trámite que deseas realizar.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card mb-3 col-md-6" style="max-width: 1200px;">
+                <div class="row no-gutters">
+                  <div class="col-md-4">
+                    <a href="{{route('historialTramites')}}">
+                        <img src="{{asset('images/tar3.jpg')}}" style="max-width: 100%;">
+                    </a>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <a href="{{route('historialTramites')}}">
+                          <h5 class="card-title">Historial de trámites</h5>
+                      </a>
+                      <p class="card-text">Aquí encotrarás un historial de tus trámites realizados hasta el día de hoy.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card mb-3 col-md-6" style="max-width: 1200px;">
+                <div class="row no-gutters">
+                  <div class="col-md-4">
+                    <a href="{{route('historialTramites')}}">
+                        <img src="{{asset('images/tar3.jpg')}}" style="max-width: 100%;">
+                    </a>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <a href="{{route('historialTramites')}}">
+                          <h5 class="card-title">Información personal</h5>
+                      </a>
+                      <p class="card-text">Aquí encotrarás toda tu información personal para actualizarla si es necesario.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
     </div>
 
 		<!-- Footer -->

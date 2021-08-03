@@ -31,24 +31,11 @@
     <div class="container mt-5 mb-5">
         <div class="jumbotron jumbotron-fluid">
             <div class="container">
-              <h1 class="display-4">Inicia sesión</h1>
-              <p class="lead">Ingresa tu correo y contraseña para inciar sesión y acceder a la plataforma</p>
+              <h1 class="display-4">Inici de sesión fallido!!</h1>
+              <p class="lead">No se pudo acceder porque alguno de tus datos es incorrectos</p>
             </div>
+            <a href="{{route('login')}}" class="btn btn-dark">Regresar</a>
           </div>
-
-          <form action="{{route('authLogin')}}" method="POST">
-            @csrf
-            <div class="form-group">
-              <label for="email">Correo</label>
-              <input type="email" class="form-control" name="email" required>
-            </div>
-            <div class="form-group">
-              <label for="password">Contraseña</label>
-              <input type="password" class="form-control" name="password" required>
-            </div>
-            <button type="submit" class="btn btn-primary">Iniciar sesión</button>
-          </form>
-          <h6 class="text-center">Aún no tienes una cuenta? <a href="{{route('registrate')}}">Registrate!</a></h6>
     </div>
 
 		<!-- Footer -->
