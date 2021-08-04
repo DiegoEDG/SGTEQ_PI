@@ -26,9 +26,14 @@
                     Sistema Gestor de Tránsito del Estado de Querétaro
                 </p>
             </div>
+            <div class="me-4">
+                <a class="text-light text-decoration-none ms-3" href="{{url('/')}}">
+                    Cerrar sesión
+                </a>
+            </div>
         </nav>
 
-        <div class="container mt-5 mb-3">
+        <div class="container mt-2 mb-2">
             <div class="jumbotron jumbotron-fluid">
                 <div class="container">
                   <h1 class="display-4 text-center">Bienvenido!</h1>

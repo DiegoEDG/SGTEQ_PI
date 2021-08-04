@@ -31,4 +31,20 @@ class PersonaController extends Controller
             return view('failLogin');
         }
     }
+    public function resgistrarPersona()
+    {
+        return view('registrate');
+    }
+    public function tramites()
+    {
+        return view('historialTramites');
+    }
+    public function perfil()
+    {
+        return view('informacionPersonal');
+    }
+    public function administrarPersonas()
+    {
+        return view('administrarPersonas');
+    }
 }
