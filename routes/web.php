@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CitaController;
+use App\Http\Controllers\PermisoController;
 use App\Http\Controllers\PersonaController;
 use App\Models\Persona;
 use Illuminate\Support\Facades\Route;
@@ -15,8 +16,16 @@ Route::get('/registrate', [PersonaController::class, 'resgistrarPersona'])->name
 
 Route::post('/authlogin', [PersonaController::class, 'authLogin'])->name('authLogin');
 
-Route::get('/historialTramites', [PersonaController::class, 'tramites'])->name('historialTramites');
+Route::get('/realizarTramite', [PermisoController::class, 'realizarTramite'])->name('realizarTramite');
 
 Route::get('/generarCita', [CitaController::class, 'generarCita'])->name('generarCita');
 
-Route::get('/realizarTramite', [CitaController::class, 'realizarTramite'])->name('realizarTramite');
+Route::get('/historialTramites', [PersonaController::class, 'tramites'])->name('historialTramites');
+
+Route::get('/informacionPersonal', [PersonaController::class, 'perfil'])->name('informacionPersonal');
+
+Route::get('/validarTramites', [PermisoController::class, 'validarTramite'])->name('validarTramites');
+
+Route::get('/validarCita', [CitaController::class, 'validarCita'])->name('validarCita');
+
+Route::get('/administrarPersonas', [PersonaController::class, 'perfil'])->name('administrarPersonas');

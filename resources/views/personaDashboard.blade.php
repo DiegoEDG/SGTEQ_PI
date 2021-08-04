@@ -41,13 +41,13 @@
         <div class="card mb-3 col-md-6" style="max-width: 1200px;">
             <div class="row no-gutters">
               <div class="col-md-4">
-                <a href="{{route('realizarTramites')}}">
+                <a href="{{route('realizarTramite')}}">
                     <img src="{{asset('images/tra.jpg')}}" style="max-width: 100%;">
                 </a>
               </div>
               <div class="col-md-8">
                 <div class="card-body">
-                  <a href="{{route('generarCita')}}">
+                  <a href="{{route('realizarTramite')}}">
                       <h5 class="card-title">Realizar un trámite</h5>
                   </a>
                   <p class="card-text">Aquí podrás encontrar los diferentes trámnites que puedes realizar.</p>
@@ -95,13 +95,13 @@
               <div class="card mb-3 col-md-6" style="max-width: 1200px;">
                 <div class="row no-gutters">
                   <div class="col-md-4">
-                    <a href="{{route('historialTramites')}}">
-                        <img src="{{asset('images/tar3.jpg')}}" style="max-width: 100%;">
+                    <a href="{{route('informacionPersonal')}}">
+                        <img src="{{asset('images/perfil.png')}}" style="max-width: 100%;">
                     </a>
                   </div>
                   <div class="col-md-8">
                     <div class="card-body">
-                      <a href="{{route('historialTramites')}}">
+                      <a href="{{route('informacionPersonal')}}">
                           <h5 class="card-title">Información personal</h5>
                       </a>
                       <p class="card-text">Aquí encotrarás toda tu información personal para actualizarla si es necesario.</p>

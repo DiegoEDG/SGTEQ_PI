@@ -19,9 +19,7 @@ class PersonaController extends Controller
             ->where('contrasenia', $request->password)
             ->get();
 
-        if ($rol == []) {
-            return view('failLogin');
-        } else {
+        if ($rol) {
             foreach ($rol as $key => $rolInt) {
                 if ($rolInt['correo'] == $request->email && $rolInt['contrasenia'] == $request->password && $rolInt['rol'] == 1) {
                     return view('adminDashboard');
@@ -29,6 +27,8 @@ class PersonaController extends Controller
                     return view('personaDashboard');
                 }
             }
+        } else {
+            return view('failLogin');
         }
     }
 }
