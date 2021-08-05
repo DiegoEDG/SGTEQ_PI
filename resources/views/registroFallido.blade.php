@@ -36,11 +36,14 @@
         <div class="container mt-2 mb-2">
             <div class="jumbotron jumbotron-fluid">
                 <div class="container">
-                  <h1 class="display-4 text-center">Administrar personas</h1>
-                  <p class="text-center">Aquí encontrarás la lista de las personas registradas en el sistema para consultar sus datos.</p>
+                  <h1 class="display-4 text-center">Registro fallido.</h1>
+                  <p class="text-center">Algo salió mal en tu registro, por favor intentalo de nuevo!</p>
+                  <a class="text-center btn btn-dark" href="{{route('login')}}">Intentar de nuevo</a>
                 </div>
               </div>
         </div>
+
+
             <!-- Footer -->
             <footer class="text-center text-lg-start mifoot text-light">
                 <section
