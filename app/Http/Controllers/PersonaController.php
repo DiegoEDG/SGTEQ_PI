@@ -31,9 +31,23 @@ class PersonaController extends Controller
             return view('failLogin');
         }
     }
-    public function resgistrarPersona()
+    public function registrarPersona(Request $request)
     {
-        return view('registrate');
+        $persona = new Persona();
+
+        $persona->nombre = $request->nombre;
+        $persona->apellido_materno = $request->apellidoMaterno;
+        $persona->apellido_paterno = $request->apellidoPaterno;
+        $persona->domicilio = $request->domicilio;
+        $persona->curp = $request->curp;
+        $persona->fecha_nacimiento = $request->fechaNacimiento;
+        $persona->sexo = $request->sexo;
+        $persona->correo = $request->correo;
+        $persona->contrasenia = $request->contrasenia;
+        $persona->rol = 0;
+        $persona->save();
+
+        return view('personaDashboard');
     }
     public function tramites()
     {

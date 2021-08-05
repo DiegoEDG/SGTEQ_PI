@@ -48,7 +48,7 @@
             </div>
             <button type="submit" class="btn btn-primary">Iniciar sesión</button>
           </form>
-          <h6 class="text-center">Aún no tienes una cuenta? <a href="{{route('registrate')}}">Registrate!</a></h6>
+          <h6 class="text-center">Aún no tienes una cuenta? <a href="{{url('/registrate')}}">Registrate!</a></h6>
     </div>
 
 		<!-- Footer -->
