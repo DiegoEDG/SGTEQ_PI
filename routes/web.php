@@ -39,3 +39,5 @@ Route::get('/validarCita', [CitaController::class, 'validarCita'])->name('valida
 Route::get('/administrarPersonas', [PersonaController::class, 'administrarPersonas'])->name('administrarPersonas');
 
 Route::get('/registrarAuto', [AutoController::class, 'registrarAuto'])->name('registrarAuto');
+
+Route::delete('/administrarPersonas/eliminarPersona/{id}', [PersonaController::class, 'eliminarPersona'])->name('eliminarPersona');

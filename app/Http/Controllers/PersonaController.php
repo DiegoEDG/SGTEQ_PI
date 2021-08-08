@@ -64,4 +64,14 @@ class PersonaController extends Controller
 
         return view('administrarPersonas', compact('personas'));
     }
+    public function eliminarPersona($id)
+    {
+        $persona = Persona::select('id')
+            ->where('id', $id)
+            ->first();
+
+        $persona->delete();
+
+        return redirect()->route('administrarPersonas');
+    }
 }

@@ -58,7 +58,13 @@
                         <td>{{$persona->apellido_materno}}</td>
                         <td>{{$persona->curp}}</td>
                         <td>{{$persona->correo}}</td>
-                        <td><a class="btn btn-dark" href="#">Eliminar</a></td>
+                        <td>
+                            <form action="{{route('eliminarPersona', $persona->id)}}" method="POST">
+                                @csrf
+                                @method('delete')
+                                <input class="btn btn-dark" type="submit" value="Eliminar">
+                            </form>
+                        </td>
                     </tr>
                     @endforeach
                 </tbody>
