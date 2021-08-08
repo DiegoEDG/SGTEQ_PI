@@ -32,7 +32,6 @@
             </a>
         </div>
     </nav>
-
     <div class="container mt-2 mb-3">
         <div class="jumbotron jumbotron-fluid">
             <div class="container">
@@ -100,13 +99,13 @@
               <div class="card mb-3 col-md-6" style="max-width: 1200px;">
                 <div class="row no-gutters">
                   <div class="col-md-4">
-                    <a href="{{route('informacionPersonal')}}">
+                    <a href="{{route('informacionPersonal',['personaId'=>$personaId])}}">
                         <img src="{{asset('images/perfil.png')}}" style="max-width: 100%;">
                     </a>
                   </div>
                   <div class="col-md-8">
                     <div class="card-body">
-                      <a href="{{route('informacionPersonal')}}">
+                      <a href="{{route('informacionPersonal',['personaId'=>$personaId])}}">
                           <h5 class="card-title">Información personal</h5>
                       </a>
                       <p class="card-text">Aquí encotrarás toda tu información personal para actualizarla si es necesario.</p>

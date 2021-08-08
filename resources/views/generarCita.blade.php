@@ -43,12 +43,12 @@
             </div>
             <div class="form-group col-md-6">
               <label for="fechaCita">Fecha</label>
-              <input type="password" class="form-control" name="fechaCita" placeholder="AAAA-MM-DD">
+              <input type="text" class="form-control" name="fechaCita" placeholder="AAAA-MM-DD">
             </div>
           </div>
         <div class="form-group">
             <label for="oficina">Oficina</label>
-            <select id="oficina" class="form-control">
+            <select id="oficina" name="oficina" class="form-control">
               <option selected>Centro Hístorico</option>
               <option>Centro Sur</option>
               <option>Bernardo Quintana</option>

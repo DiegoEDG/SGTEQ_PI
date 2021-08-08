@@ -32,7 +32,6 @@
                 </a>
             </div>
         </nav>
-
         <div class="container mt-2 mb-2">
             <div class="jumbotron jumbotron-fluid">
                 <div class="container">
@@ -40,56 +39,57 @@
                   <p class="text-center">Aquí encontrarás tu información personal y podrás actualizar los datos en cualquier momento.</p>
                 </div>
               </div>
-              <form>
+              <form action="{{route('editarInfo', ['id'=>$persona->id])}}" method="POST">
+                @csrf
+                @method('put')
                 <div class="form-row">
                     <div class="form-group col-md-4">
                       <label for="nombre">Nombre(s)</label>
-                      <input type="text" class="form-control" name="nombre">
+                      <input type="text" class="form-control" name="nombre" value="{{$persona->nombre}}">
                     </div>
                     <div class="form-group col-md-4">
                       <label for="apellidoPaterno">Apellido Paterno</label>
-                      <input type="password" class="form-control" name="apellidoPaterno">
+                      <input type="text" class="form-control" name="apellidoPaterno" value="{{$persona->apellido_paterno}}">
                     </div>
                     <div class="form-group col-md-4">
                       <label for="apellidoMaterno">Apellido Materno</label>
-                      <input type="password" class="form-control" name="apellidoMaterno">
+                      <input type="text" class="form-control" name="apellidoMaterno" value="{{$persona->apellido_materno}}">
                     </div>
                   </div>
                   <div class="form-row">
                       <div class="form-group col-md-8">
                         <label for="domicilio">Domicilio</label>
-                        <input type="text" class="form-control" name="domicilio">
+                        <input type="text" class="form-control" name="domicilio" value="{{$persona->domicilio}}">
                       </div>
                       <div class="form-group col-md-4">
                         <label for="codigoPostal">Código Postal</label>
-                        <input type="text" class="form-control" name="codigoPostal">
+                        <input type="text" class="form-control" name="codigoPostal" value="{{$persona->codigo_postal}}">
                       </div>
                   </div>
                   <div class="form-row">
                     <div class="form-group col-md-4">
                       <label for="curp">CURP</label>
-                      <input type="text" class="form-control" name="curp">
+                      <input type="text" class="form-control" name="curp" value="{{$persona->curp}}">
                     </div>
                     <div class="form-group col-md-4">
-                      <label for="fechaNacimeinto">Fecha de Nacimiento</label>
-                      <input type="password" class="form-control" name="fechaNacimeinto" placeholder="AAAA-MM-DD">
+                      <label for="fechaNacimiento">Fecha de Nacimiento</label>
+                      <input type="text" class="form-control" name="fechaNacimiento" placeholder="AAAA-MM-DD" value="{{$persona->fecha_nacimiento}}">
                     </div>
                     <div class="form-group col-md-4">
                         <label for="sexo">Género</label>
                         <select id="sexo" class="form-control">
-                          <option selected>Hombre</option>
-                          <option>Mujer</option>
+                          <option selected value="{{$persona->sexo}}">{{$persona->sexo}}</option>
                         </select>
                       </div>
                   </div>
                 <div class="form-row">
                   <div class="form-group col-md-6">
                     <label for="correo">Correo</label>
-                    <input type="email" class="form-control" name="correo">
+                    <input type="email" class="form-control" name="correo" value="{{$persona->correo}}">
                   </div>
                   <div class="form-group col-md-6">
                     <label for="contrasenia">Contraseña</label>
-                    <input type="password" class="form-control" name="contrasenia">
+                    <input type="password" class="form-control" name="contrasenia" value="{{$persona->contrasenia}}">
                   </div>
                 </div>
 

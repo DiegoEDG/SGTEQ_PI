@@ -15,7 +15,7 @@ class PersonaController extends Controller
 
     public function authLogin(Request $request)
     {
-        $rol = Persona::select('correo', 'contrasenia', 'rol')
+        $rol = Persona::select('id', 'correo', 'contrasenia', 'rol')
             ->where('correo', $request->email)
             ->where('contrasenia', $request->password)
             ->get();
@@ -23,9 +23,11 @@ class PersonaController extends Controller
         if ($rol) {
             foreach ($rol as $key => $rolInt) {
                 if ($rolInt['correo'] == $request->email && $rolInt['contrasenia'] == $request->password && $rolInt['rol'] == 1) {
-                    return view('adminDashboard');
+                    $personaId = $rolInt['id'];
+                    return view('adminDashboard', compact('personaId'));
                 } else if ($rolInt['correo'] == $request->email && $rolInt['contrasenia'] == $request->password && $rolInt['rol'] == 0) {
-                    return view('personaDashboard');
+                    $personaId = $rolInt['id'];
+                    return view('personaDashboard', compact('personaId'));
                 }
             }
         } else {
@@ -40,6 +42,7 @@ class PersonaController extends Controller
         $persona->apellido_materno = $request->apellidoMaterno;
         $persona->apellido_paterno = $request->apellidoPaterno;
         $persona->domicilio = $request->domicilio;
+        $persona->codigo_postal = $request->codigoPostal;
         $persona->curp = $request->curp;
         $persona->fecha_nacimiento = $request->fechaNacimiento;
         $persona->sexo = $request->sexo;
@@ -48,16 +51,57 @@ class PersonaController extends Controller
         $persona->rol = 0;
         $persona->save();
 
+        $personaId = Persona::select('id')
+            ->where('curp', $request->curp)
+            ->get();
+
+        return view('personaDashboard', compact('personaId'));
+    }
+
+    public function personaDashboard()
+    {
         return view('personaDashboard');
     }
+
+    public function adminDashboard()
+    {
+        return view('adminDashboard');
+    }
+
     public function tramites()
     {
         return view('historialTramites');
     }
-    public function perfil()
+    public function perfil($id)
     {
-        return view('informacionPersonal');
+        $persona = Persona::find($id);
+
+        return view('informacionPersonal', compact('persona'));
     }
+
+    public function editarInfo(Request $request, $id)
+    {
+        $persona = Persona::find($id);
+        $persona->nombre = $request->nombre;
+        $persona->apellido_materno = $request->apellidoMaterno;
+        $persona->apellido_paterno = $request->apellidoPaterno;
+        $persona->domicilio = $request->domicilio;
+        $persona->codigo_postal = $request->codigoPostal;
+        $persona->curp = $request->curp;
+        $persona->fecha_nacimiento = $request->fechaNacimiento;
+        $persona->sexo = $request->sexo;
+        $persona->correo = $request->correo;
+        $persona->contrasenia = $request->contrasenia;
+        $persona->rol = 0;
+        $persona->save();
+
+        $personaId = Persona::select('id')
+            ->where('id', $persona->id)
+            ->get();
+
+        return view('informacionPersonal', compact('persona'));
+    }
+
     public function administrarPersonas()
     {
         $personas = Persona::all();

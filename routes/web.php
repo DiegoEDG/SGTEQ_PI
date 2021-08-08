@@ -22,6 +22,10 @@ Route::get('/login', [PersonaController::class, 'login'])->name('login');
 
 Route::post('/authlogin', [PersonaController::class, 'authLogin'])->name('authLogin');
 
+Route::get('personaDashboard', [PersonaController::class, 'personaDashboard'])->name('personaDashboard');
+
+Route::get('adminDashboard', [PersonaController::class, 'adminDashboard'])->name('adminDashboard');
+
 Route::post('/registrarPersona', [PersonaController::class, 'registrarPersona'])->name('registrarPersona');
 
 Route::get('/realizarTramite', [PermisoController::class, 'realizarTramite'])->name('realizarTramite');
@@ -30,7 +34,9 @@ Route::get('/generarCita', [CitaController::class, 'generarCita'])->name('genera
 
 Route::get('/historialTramites', [PersonaController::class, 'tramites'])->name('historialTramites');
 
-Route::get('/informacionPersonal', [PersonaController::class, 'perfil'])->name('informacionPersonal');
+Route::get('/informacionPersonal/{personaId}', [PersonaController::class, 'perfil'])->name('informacionPersonal');
+
+Route::put('editarInfo/{id}', [PersonaController::class, 'editarInfo'])->name('editarInfo');
 
 Route::get('/validarTramites', [PermisoController::class, 'validarTramites'])->name('validarTramites');
 
