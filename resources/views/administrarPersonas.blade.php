@@ -39,7 +39,30 @@
                   <h1 class="display-4 text-center">Administrar personas</h1>
                   <p class="text-center">Aquí encontrarás la lista de las personas registradas en el sistema para consultar sus datos.</p>
                 </div>
-              </div>
+              </div><table class="table table-striped">
+                <thead>
+                  <tr class="table-primary">
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Apellido Paterno</th>
+                    <th scope="col">Apellido Materno</th>
+                    <th scope="col">CURP</th>
+                    <th scope="col">Correo</th>
+                    <th scope="col">Eliminar</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    @foreach ($personas as $persona )
+                    <tr>
+                        <td>{{$persona->nombre}}</td>
+                        <td>{{$persona->apellido_paterno}}</td>
+                        <td>{{$persona->apellido_materno}}</td>
+                        <td>{{$persona->curp}}</td>
+                        <td>{{$persona->correo}}</td>
+                        <td><a class="btn btn-dark" href="#">Eliminar</a></td>
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
         </div>
             <!-- Footer -->
             <footer class="text-center text-lg-start mifoot text-light">

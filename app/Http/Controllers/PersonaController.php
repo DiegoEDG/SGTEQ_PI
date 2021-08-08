@@ -60,6 +60,8 @@ class PersonaController extends Controller
     }
     public function administrarPersonas()
     {
-        return view('administrarPersonas');
+        $personas = Persona::all();
+
+        return view('administrarPersonas', compact('personas'));
     }
 }
