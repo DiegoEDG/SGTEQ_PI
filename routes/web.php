@@ -30,7 +30,9 @@ Route::post('/registrarPersona', [PersonaController::class, 'registrarPersona'])
 
 Route::get('/realizarTramite', [PermisoController::class, 'realizarTramite'])->name('realizarTramite');
 
-Route::get('/generarCita', [CitaController::class, 'generarCita'])->name('generarCita');
+Route::get('/generarCita/{personaId}', [CitaController::class, 'generarCita'])->name('generarCita');
+
+Route::post('/guardarCita/{personaId}', [CitaController::class, 'guardarCita'])->name('guardarCita');
 
 Route::get('/historialTramites', [PersonaController::class, 'tramites'])->name('historialTramites');
 

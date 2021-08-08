@@ -7,7 +7,14 @@ use Illuminate\Http\Request;
 
 class CitaController extends Controller
 {
-    public function generarCita(Request $request)
+    public function generarCita($id)
+    {
+        $personaId = $id;
+
+        return view('generarCita', compact('personaId'));
+    }
+
+    public function guardarCita(Request $request, $id)
     {
         $cita = new Cita();
 
@@ -15,12 +22,14 @@ class CitaController extends Controller
         $cita->fecha_cita = $request->fechaCita;
         $cita->lugar = $request->oficina;
         $cita->estatus = "pendiente";
-        $cita->persona_id = 1;
-
+        $cita->persona_id = $id;
         $cita->save();
 
-        return redirect()->route('personaDashboard', 1);
+        $personaId = $id;
+
+        return view('personaDashboard', compact('personaId'));
     }
+
     public function validarCita()
     {
         return view('validarCita');

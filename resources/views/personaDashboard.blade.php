@@ -63,13 +63,13 @@
               <div class="card mb-3 col-md-6" style="max-width: 1200px;">
                 <div class="row no-gutters">
                   <div class="col-md-4">
-                    <a href="{{route('generarCita')}}">
+                    <a href="{{route('generarCita',['personaId'=>$personaId])}}">
                         <img src="{{asset('images/tar4.jpg')}}" style="max-width: 100%;">
                     </a>
                   </div>
                   <div class="col-md-8">
                     <div class="card-body">
-                      <a href="{{route('generarCita')}}">
+                      <a href="{{route('generarCita',['personaId'=>$personaId])}}">
                           <h5 class="card-title">Agendar un cita</h5>
                       </a>
                       <p class="card-text">Aquí podrás agendar una cita para el trámite que deseas realizar.</p>

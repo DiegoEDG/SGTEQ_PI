@@ -35,7 +35,8 @@
               <p class="lead text-center">Llena el formulario con los datos necesarios para poder agendar tu cita.</p>
         </div>
     </div>
-    <form>
+    <form action="{{route('guardarCita',compact('personaId'))}}" method="POST">
+        @csrf
         <div class="form-row">
             <div class="form-group col-md-6">
               <label for="motivo">Motivo</label>
