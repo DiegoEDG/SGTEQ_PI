@@ -32,6 +32,16 @@ class CitaController extends Controller
 
     public function validarCita()
     {
-        return view('validarCita');
+        $citas = Cita::all();
+
+        return view('validarCita', compact('citas'));
+    }
+
+    public function eliminarCita($id)
+    {
+        $cita = Cita::find($id);
+        $cita->delete();
+
+        return redirect()->route('validarCita');
     }
 }

@@ -23,8 +23,7 @@ class PersonaController extends Controller
         if ($rol) {
             foreach ($rol as $key => $rolInt) {
                 if ($rolInt['correo'] == $request->email && $rolInt['contrasenia'] == $request->password && $rolInt['rol'] == 1) {
-                    $personaId = $rolInt['id'];
-                    return view('adminDashboard', compact('personaId'));
+                    return view('adminDashboard');
                 } else if ($rolInt['correo'] == $request->email && $rolInt['contrasenia'] == $request->password && $rolInt['rol'] == 0) {
                     $personaId = $rolInt['id'];
                     return view('personaDashboard', compact('personaId'));

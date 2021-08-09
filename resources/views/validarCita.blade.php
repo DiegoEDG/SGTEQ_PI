@@ -40,6 +40,36 @@
                   <p class="text-center">Aquí encontrarás la lista de las citas generadas para antenderlas durante el día.</p>
                 </div>
               </div>
+              <table class="table table-striped">
+                <thead>
+                  <tr class="table-primary">
+                    <th scope="col">Motivo</th>
+                    <th scope="col">Fecha</th>
+                    <th scope="col">Oficina</th>
+                    <th scope="col">Estatus</th>
+                    <th scope="col">Persona</th>
+                    <th scope="col">Atendida</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    @foreach ($citas as $cita )
+                    <tr>
+                        <td>{{$cita->nombre}}</td>
+                        <td>{{$cita->fecha_cita}}</td>
+                        <td>{{$cita->lugar}}</td>
+                        <td>{{$cita->estatus}}</td>
+                        <td>{{$cita->persona_id}}</td>
+                        <td>
+                            <form action="{{route('eliminarCita', $cita->id)}}" method="POST">
+                                @csrf
+                                @method('delete')
+                                <input class="btn btn-dark" type="submit" value="Atendida">
+                            </form>
+                        </td>
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
         </div>
             <!-- Footer -->
             <footer class="text-center text-lg-start mifoot text-light">

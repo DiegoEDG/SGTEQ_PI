@@ -4,6 +4,7 @@ use App\Http\Controllers\AutoController;
 use App\Http\Controllers\CitaController;
 use App\Http\Controllers\PermisoController;
 use App\Http\Controllers\PersonaController;
+use App\Models\Permiso;
 use App\Models\Persona;
 use Illuminate\Support\Facades\Route;
 
@@ -28,7 +29,9 @@ Route::get('adminDashboard', [PersonaController::class, 'adminDashboard'])->name
 
 Route::post('/registrarPersona', [PersonaController::class, 'registrarPersona'])->name('registrarPersona');
 
-Route::get('/realizarTramite', [PermisoController::class, 'realizarTramite'])->name('realizarTramite');
+Route::get('/realizarTramite/{personaId}', [PermisoController::class, 'realizarTramite'])->name('realizarTramite');
+
+Route::post('/guardarPermiso/{personaId}', [PermisoController::class, 'guardarPermiso'])->name('guardarPermiso');
 
 Route::get('/generarCita/{personaId}', [CitaController::class, 'generarCita'])->name('generarCita');
 
@@ -43,6 +46,8 @@ Route::put('editarInfo/{id}', [PersonaController::class, 'editarInfo'])->name('e
 Route::get('/validarTramites', [PermisoController::class, 'validarTramites'])->name('validarTramites');
 
 Route::get('/validarCita', [CitaController::class, 'validarCita'])->name('validarCita');
+
+Route::delete('/validarCita/eliminarCita/{id}', [CitaController::class, 'eliminarCita'])->name('eliminarCita');
 
 Route::get('/administrarPersonas', [PersonaController::class, 'administrarPersonas'])->name('administrarPersonas');
 

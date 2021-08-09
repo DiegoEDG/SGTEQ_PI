@@ -39,7 +39,8 @@
                   <h1 class="display-4 text-center">Administrar personas</h1>
                   <p class="text-center">Aquí encontrarás la lista de las personas registradas en el sistema para consultar sus datos.</p>
                 </div>
-              </div><table class="table table-striped">
+              </div>
+              <table class="table table-striped">
                 <thead>
                   <tr class="table-primary">
                     <th scope="col">Nombre</th>

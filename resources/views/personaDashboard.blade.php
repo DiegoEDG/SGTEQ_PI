@@ -45,13 +45,13 @@
         <div class="card mb-3 col-md-6" style="max-width: 1200px;">
             <div class="row no-gutters">
               <div class="col-md-4">
-                <a href="{{route('realizarTramite')}}">
+                <a href="{{route('realizarTramite',['personaId'=>$personaId])}}">
                     <img src="{{asset('images/tra.jpg')}}" style="max-width: 100%;">
                 </a>
               </div>
               <div class="col-md-8">
                 <div class="card-body">
-                  <a href="{{route('realizarTramite')}}">
+                  <a href="{{route('realizarTramite',['personaId'=>$personaId])}}">
                       <h5 class="card-title">Realizar un trámite</h5>
                   </a>
                   <p class="card-text">Aquí podrás encontrar los diferentes trámnites que puedes realizar.</p>

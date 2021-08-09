@@ -32,7 +32,8 @@
                 </a>
             </div>
         </nav>
-
+        {{dump($autoId)}}
+        {{dump($personaId)}}
         <div class="container mt-2 mb-2">
             <div class="jumbotron jumbotron-fluid">
                 <div class="container">
@@ -40,10 +41,11 @@
                   <p class="text-center">Para realizar el trámite de tu permiso de circulación, por favor llena el formulario para realizar la solicitud.</p>
                 </div>
               </div>
-              <form action="">
+              <form action="{{route('guardarPermiso', ['personaId'=>$personaId, 'autoId'=>$autoId])}}" method="POST">
+                @csrf
                   <div class="form-group">
-                      <label for="justificación">Justificación</label>
-                      <textarea class="form-control" name="justificación" rows="8"></textarea>
+                      <label for="justificacion">Justificación</label>
+                      <textarea class="form-control" name="justificacion" rows="8"></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary">Solicitar permiso</button>
               </form>
